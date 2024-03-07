@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 
 function WatchItem({ onDeleteItem, item }) {
     const [time, setTime] = useState(null);
-
     const { name, timezone } = item;
 
     useEffect(() => {
@@ -13,7 +12,7 @@ function WatchItem({ onDeleteItem, item }) {
     }, [time]);
 
     const setIntervalTime = () => {
-        setTime(moment().tz(`Etc/GMT${timezone}`).format('HH:mm:ss'))
+        setTime(moment().utc().add(timezone, 'h').format('HH:mm:ss'))
     }
 
     return (

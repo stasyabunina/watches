@@ -57,7 +57,7 @@ function Watches() {
         <div className="container">
             <WatchesForm onSubmit={onSubmit} formData={form} onValueChange={onValueChange} />
             {timeError ? <span className="error">Зона должна совпадать формату +/-ЧЧ</span> : emptyError ? <span className="error">Поля не должны быть пустыми</span> : <></>}
-            {watches.length === 0 ? <></> : <WatchesList items={watches} onDeleteItem={onDeleteItem} />}
+            {watches.length === 0 ? <></> : <WatchesList items={watches} onDeleteItem={onDeleteItem}/>}
         </div>
     );
 }
